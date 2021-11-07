@@ -1,7 +1,7 @@
 import './App.css';
 import React from "react"
 import Header from "./components/Header"
-import ThemeContext from './ThemeContext';
+import {ThemeContextConsumer} from './ThemeContext';
 
 
 function App() {
@@ -9,13 +9,13 @@ function App() {
       return (
           <div>
             <Header />
-            <ThemeContext.Consumer>
+            <ThemeContextConsumer>
               {theme => (
                 <main>
                     <p className="main">No new notifications, {theme}! 🎉</p>   
                 </main>
               )}  
-            </ThemeContext.Consumer>  
+            </ThemeContextConsumer>  
           </div>
       )
 }

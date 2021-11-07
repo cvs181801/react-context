@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ThemeContext from "./ThemeContext"
+import {ThemeContextProvider} from "./ThemeContext"
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeContext.Provider value={"ryan"}>
+   <ThemeContextProvider value={"Kiley"}>
     <App />
-    </ThemeContext.Provider>
+   </ThemeContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

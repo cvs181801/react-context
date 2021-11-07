@@ -4,10 +4,10 @@ const {Provider, Consumer} = React.createContext()
 class ThemeContextprovider extends Component {
     render() {
         return(
-            <ThemeContextProvider value={"Kiley"}>
+            <Provider value={"Kiley"}>
                 {this.props.children}
-            </ThemeContextProvider>
+            </Provider>
         )
     }
 }
-export {ThemeContextProvider, Consumer as ThemeContextConsumer}
+export {Provider as ThemeContextProvider, Consumer as ThemeContextConsumer}

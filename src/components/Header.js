@@ -1,14 +1,14 @@
 import React from "react"
-import ThemeContext from "../ThemeContext"
+import {ThemeContextConsumer} from "../ThemeContext"
 import PropTypes from 'prop-types'
 
 function Header() {
         return (
-            <ThemeContext.Consumer>
+            <ThemeContextConsumer>
                     {theme => (<header>
                     <p>Welcome, {theme}!</p>
                 </header>) }
-            </ThemeContext.Consumer>
+            </ThemeContextConsumer>
         )    
     }
 
