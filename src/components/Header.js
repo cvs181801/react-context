@@ -1,5 +1,6 @@
 import React from "react"
 import ThemeContext from "../ThemeContext"
+import PropTypes from 'prop-types'
 
 function Header() {
         return (
@@ -11,6 +12,9 @@ function Header() {
         )    
     }
 
+Header.propTypes = {
+    theme: PropTypes.string
+}
 
 
 export default Header
