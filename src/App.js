@@ -3,21 +3,21 @@ import React from "react"
 import Header from "./components/Header"
 import ThemeContext from './ThemeContext';
 
-class App extends React.Component {
- render() {
+
+function App() {
+
       return (
           <div>
-            
-              <Header />
-              <main>
-                  <p className="main">No new notifications, {this.context}! 🎉</p>   
-              </main>
-            
+            <Header />
+            <ThemeContext.Consumer>
+              {theme => (
+                <main>
+                    <p className="main">No new notifications, {theme}! 🎉</p>   
+                </main>
+              )}  
+            </ThemeContext.Consumer>  
           </div>
       )
-  }
 }
-
-App.contextType = ThemeContext
 
 export default App
