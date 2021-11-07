@@ -5,7 +5,6 @@ import ThemeContext from './ThemeContext';
 
 class App extends React.Component {
   render() {
-    console.log(this.context)
       return (
           <div>
               <Header />
