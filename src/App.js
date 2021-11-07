@@ -4,14 +4,15 @@ import Header from "./components/Header"
 import ThemeContext from './ThemeContext';
 
 class App extends React.Component {
-  render() {
+ render() {
       return (
           <div>
+            
               <Header />
               <main>
-                  <p className="main">No new notifications, {this.context}! 🎉</p>
-                
+                  <p className="main">No new notifications, {this.context}! 🎉</p>   
               </main>
+            
           </div>
       )
   }

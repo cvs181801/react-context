@@ -1,16 +1,16 @@
-import React, {Component} from "react"
+import React from "react"
 import ThemeContext from "../ThemeContext"
 
-class Header extends Component {
-    render() {
+function Header() {
         return (
-            <header>
-                <p>Welcome, {this.context}!</p>
-            </header>
+            <ThemeContext.Consumer>
+                    {theme => (<header>
+                    <p>Welcome, {theme}!</p>
+                </header>) }
+            </ThemeContext.Consumer>
         )    
     }
-}
 
-Header.contextType = ThemeContext
+
 
 export default Header
