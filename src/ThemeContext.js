@@ -1,12 +1,22 @@
-import React, {Component} from 'react'
+import React from 'react'
 const {Provider, Consumer} = React.createContext()
 
-class ThemeContextprovider extends Component {
+class ThemeContextProvider extends React.Component {
+        state = {
+            username: "bob"
+        }
+     
+        changeUsername =(username) => {
+            this.setState({username: username})
+        }
+    
     render() {
         return(
-            <Provider value={"Kiley"}>
+            <div>
+            <Provider value={this.state.username}>
                 {this.props.children}
             </Provider>
+       </div>
         )
     }
 }

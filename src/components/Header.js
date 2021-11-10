@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 function Header() {
         return (
             <ThemeContextConsumer>
-                    {theme => (<header>
-                    <p>Welcome, {theme}!</p>
+                    {context => (<header>
+                    <p>Welcome, {context}!</p>
                 </header>) }
             </ThemeContextConsumer>
         )    

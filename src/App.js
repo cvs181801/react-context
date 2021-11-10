@@ -1,56 +1,49 @@
 import './App.css';
 import React from "react"
 import Header from "./components/Header"
-import {ThemeContextConsumer} from './ThemeContext';
+import {ThemeContextConsumer, ThemeContextProvider} from './ThemeContext';
 
 
 class App extends React.Component {
-  constructor() {
-    super()
-      this.state = {
-        username: ""
-    }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
+  
+      state = {
+        newUsername: ""
+      }  
 
-
-handleChange(event) {
-  this.setState({ username: event.target.value }) 
+handleChange = (event)=> {
+  const {name, value} = event.target
+  this.setState({[name]: value})
 }
 
-handleSubmit(event) {
-  event.preventDefault();
-  console.log("submitted")
-}
 
 render() {
       return (
           <div>
             <Header />
             <ThemeContextConsumer>
-              {theme => (
+              {context => (
                 <main>
-                    <p className="main">No new notifications, {theme}! 🎉</p>   
+                    <p className="main">No new notifications, {context}! 🎉</p>   
                 </main>
               )}  
             </ThemeContextConsumer>  
-             <form
-                  name="form"
-                 onSubmit={this.handleSubmit}
-                 >
-             <input
-                 type="text"
-                 name="username"
-                 placeholder="New username"
-                 value={this.state.value}
-                 onChange={this.handleChange}
-             />
-             <button
+            <form
+            name="form"
+           onSubmit={this.handleSubmit}
+           >
+            <input
+                type="text"
+                name="username"
+                placeholder="New username"
+                value={this.state.newUsername}
+                onChange={this.handleChange}
+            />
+            <button
                 type="submit"
-             >Change Username</button>
-             </form> 
-             <p> {this.state.username}</p>
+            >Change Username</button>
+            </form> 
+            <p>{this.state.newUsername}</p>
+            
           </div>
       )
     }

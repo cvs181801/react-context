@@ -8,7 +8,7 @@ import {ThemeContextProvider} from "./ThemeContext"
 
 ReactDOM.render(
   <React.StrictMode>
-   <ThemeContextProvider value={"Kiley"}>
+   <ThemeContextProvider>
     <App />
    </ThemeContextProvider>
   </React.StrictMode>,
